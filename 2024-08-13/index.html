@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="showAlert()">Alert box</button>
+    <button onclick="showConfirm()">Confirm box</button>
+    <button onclick="showPrompt()">Prompt box</button>
+    <button onclick="calArea()">Area</button>
+
+
+    <form action="#">
+        <label for="first_name">first name: </label>
+        <input type="text" id="first_name"><br>
+        
+        <label for="last_name">last name: </label>
+        <input type="text" id="last_name"><br>
+       
+        <label for="sex">sex: </label>
+        male:<input type="radio" id="male" value="male" name="gender">
+        female:<input type="radio" id="female" value="female" name="gender"><br>
+
+        <button onclick="getValue()">Passs</button>
+    </form>
+
+    <script>
+    function showAlert(){
+        alert("hellow");
+    }
+    function showConfirm(){
+        confirm("Are you want this session: ");
+    }
+    function showPrompt(){
+        let value = prompt("insert massege here: ");
+        alert(value);
+        console.log(value);
+        var s;
+        s = "hello";
+        console.log(typeof s);
+        s = 54321;
+        console.log(typeof s);
+    }
+
+    function getValue(){
+        let first_name = document.getElementById('first_name').value;
+        let last_name = document.getElementById('last_name').value;
+        let gender = document.getElementsByName('gender');
+        console.log('first_name: ' + first_name );
+        console.log('Last name: ' + last_name);
+        for(let i=0; i<gender.length; i++){
+            if(gender[i].checked){
+                console.log("gender:" + gender[i].value);
+            }
+        }
+
+    }
+
+    function calArea(){
+        let a = 12;
+        let b = 15;
+        let c = 20;
+        let s = (a+b+c)/2;
+        let A = Math.sqrt(s*(s-a)*(s-b)*(s-c));
+        console.log(`area:` + A);
+    }
+
+    
+    
+    </script>
+</body>
+</html>
